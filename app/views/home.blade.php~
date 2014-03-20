@@ -1,0 +1,8 @@
+@extends('layout')
+
+@section('content')
+<h1>Model Kits Sales Database</h1>
+<div class="jumbotron">
+    <p>Welcome to my php database test application, developed for demonstation purposes. This application was developed using the Laravel PHP Framework and MySQL. This application uses a sample customer/products/orders database from the internet. It seems to be about model kits. The database isn't quite structured the way I'd do it, but its enough for this demonstration.</p>
+</div>
+@stop

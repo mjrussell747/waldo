@@ -1,0 +1,11 @@
+<?php
+
+    class Customer extends Eloquent
+    {
+        public function employee()
+        {
+            return $this->belongsTo('Employee');
+        }
+    }
+
+?>

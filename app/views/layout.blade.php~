@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>Waldo Demo Application</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/js/standalone/selectize.min.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.bootstrap3.css">
+    <style>
+        body {
+            padding-top: 70px;
+        }
+    </style>
+</head>
+<body ng-controller="MainCtrl">
+    <div class="container">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">PHP Demo Application</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ URL::to('categories') }}">List</a></li>
+                            <li><a href="{{ URL::to('categories/create') }}">New</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Customers<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ URL::to('customers') }}">List</a></li>
+                            <li><a href="{{ URL::to('customers/create') }}">New</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Employees<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ URL::to('employees') }}">List</a></li>
+                            <li><a href="{{ URL::to('employees/create') }}">New</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Offices<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ URL::to('offices') }}">List</a></li>
+                            <li><a href="{{ URL::to('offices/create') }}">New</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Orders<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ URL::to('orders') }}">List</a></li>
+                            <li><a href="{{ URL::to('orders/create') }}">New</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Payments<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ URL::to('payments') }}">List</a></li>
+                            <li><a href="{{ URL::to('payments/create') }}">New</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ URL::to('products') }}">List</a></li>
+                            <li><a href="{{ URL::to('products/create') }}">New</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- will be used to show any messages -->
+    @if (Session::has('message'))
+        <div class="alert alert-info">{{ Session::get('message') }}</div>
+    @endif
+
+    @yield('content')
+    </div>
+</body>
+</html>
